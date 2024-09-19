@@ -15,6 +15,15 @@ object Form1: TForm1
   OnDestroy = FormDestroy
   PixelsPerInch = 96
   TextHeight = 13
+  object Button1: TButton
+    Left = 168
+    Top = 136
+    Width = 75
+    Height = 25
+    Caption = 'Button'
+    TabOrder = 0
+    OnClick = Button1Click
+  end
   object FDConnection: TFDConnection
     Params.Strings = (
       'Database=js_lib'
