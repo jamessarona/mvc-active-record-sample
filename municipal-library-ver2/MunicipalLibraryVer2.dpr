@@ -17,7 +17,8 @@ uses
   MVCFramework.Container,
   MVCFramework.Signal,
   Controllers.CustomersU in 'Controllers.CustomersU.pas',
-  MunicipalLibraryWM in 'MunicipalLibraryWM.pas' {MunicipalLibraryWebModule: TWebModule};
+  MunicipalLibraryWM in 'MunicipalLibraryWM.pas' {MunicipalLibraryWebModule: TWebModule},
+  EntitiesU in 'EntitiesU.pas';
 
 {$R *.res}
 

@@ -6,7 +6,10 @@ uses
   System.SysUtils,
   System.Classes,
   Web.HTTPApp,
-  MVCFramework;
+  MVCFramework, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error,
+  FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool,
+  FireDAC.Stan.Async, FireDAC.Phys, FireDAC.VCLUI.Wait, Data.DB,
+  FireDAC.Comp.Client;
 
 type
   TMunicipalLibraryWebModule = class(TWebModule)
@@ -68,9 +71,12 @@ begin
 
   // Controllers
   FMVC.AddController(TCustomersController);
+//  FMVC.AddController(TBooksController);
+//  FMVC.AddController(TLendingController);
   // Controllers - END
 
   // Middleware
+  FMVC.AddMiddleware(TMVCActiveRecordMiddleware.Create('municipal_library'));
   // Middleware - END
 
 end;
