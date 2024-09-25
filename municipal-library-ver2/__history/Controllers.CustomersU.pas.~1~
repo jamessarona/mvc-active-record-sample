@@ -1,0 +1,19 @@
+unit Controllers.CustomersU;
+
+interface
+
+uses
+  MVCFramework, MVCFramework.Commons, Unit1, MVCFramework.Serializer.Commons, System.Generics.Collections;
+
+type
+  [MVCPath('/api')]
+  TCustomersController = class(TMVCController)
+  end;
+
+implementation
+
+uses
+  System.StrUtils, System.SysUtils, MVCFramework.Logger;
+
+
+end.
