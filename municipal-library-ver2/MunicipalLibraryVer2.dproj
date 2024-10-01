@@ -89,7 +89,6 @@
         <DCCReference Include="Controllers.CustomersU.pas"/>
         <DCCReference Include="MunicipalLibraryWM.pas">
             <Form>MunicipalLibraryWebModule</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TWebModule</DesignClass>
         </DCCReference>
         <DCCReference Include="EntitiesU.pas"/>
