@@ -4,11 +4,12 @@ interface
 
 uses
   MVCFramework, MVCFramework.Commons, Controllers.PeopleServiceU,
-  MVCFramework.Serializer.Commons, System.Generics.Collections;
+  MVCFramework.Serializer.Commons, System.Generics.Collections,
+  Controllers.BaseU;
 
 type
   [MVCPath('/api/lendings')]
-  TLendingsController = class(TMVCController)
+  TLendingsController = class(TControllerBase)
   end;
 
 implementation

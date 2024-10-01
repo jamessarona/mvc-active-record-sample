@@ -1,0 +1,39 @@
+unit MainFrm;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
+
+type
+  TMainForm = class(TForm)
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  MainForm: TMainForm;
+
+implementation
+
+uses MVCFramework.ActiveRecord;
+
+{$R *.dfm}
+
+procedure TMainForm.FormCreate(Sender: TObject);
+begin
+  FDConnection.ConnectionDefName := 'MyConnectionDefName';
+  ActiveRecordConnectionsRegistry.AddDefaultConnection(FDConnection, True);
+end;
+
+procedure TMainForm.FormDestroy(Sender: TObject);
+begin
+  ActiveRecordConnectionsRegistry.RemoveDefaultConnection;
+end;
+
+end.
