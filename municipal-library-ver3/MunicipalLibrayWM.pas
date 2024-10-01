@@ -25,6 +25,10 @@ implementation
 
 uses
   Controllers.CustomersU,
+  Controllers.BooksU,
+  Controllers.LendingsU,
+  Controllers.UsersU,
+  Controllers.AuthorsU,
   System.IOUtils,
   MVCFramework.Commons,
   MVCFramework.Middleware.ActiveRecord,
@@ -49,7 +53,7 @@ begin
       //unhandled actions are permitted?
       Config[TMVCConfigKey.AllowUnhandledAction] := dotEnv.Env('dmvc.allow_unhandled_actions', 'false');
       //enables or not system controllers loading (available only from localhost requests)
-      Config[TMVCConfigKey.LoadSystemControllers] := dotEnv.Env('dmvc.load_system_controllers', 'true');
+      Config[TMVCConfigKey.LoadSystemControllers] := 'false';
       //default view file extension
       Config[TMVCConfigKey.DefaultViewFileExtension] := dotEnv.Env('dmvc.default.view_file_extension', 'html');
       //view path
@@ -67,10 +71,20 @@ begin
     end);
 
   // Controllers
+  { /api/customers endpoint}
   FMVC.AddController(TCustomerController);
+  { /api/books endpoint}
+  FMVC.AddController(TBooksController);
+  { /api/lending endpoint}
+  FMVC.AddController(TLendingsController);
+  { /api/users endpoint}
+  FMVC.AddController(TUsersController);
+  { /api/authors endpoint}
+  FMVC.AddController(TAuthorsController);
   // Controllers - END
 
   // Middleware
+  FMVC.AddMiddleware(TMVCCompressionMiddleware.Create)
   // Middleware - END
 
 end;

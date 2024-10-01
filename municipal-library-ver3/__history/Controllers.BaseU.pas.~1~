@@ -1,0 +1,25 @@
+unit Controllers.BaseU;
+
+interface
+
+uses
+  MVCFramework, MVCFramework.Commons, Controllers.PeopleServiceU,
+  MVCFramework.Serializer.Commons, System.Generics.Collections;
+
+type
+  TControllerBase = class(TMVCController)
+  protected
+    procedure OnBeforeAction(AContext: TWebContext;
+      const AActionName: string; var AHandled: Boolean); override;
+    procedure OnAfterAction(ACOntext: TWebContext;
+      const AActionName: string); override;
+  end;
+
+implementation
+
+uses
+  System.StrUtils, System.SysUtils, MVCFramework.Logger;
+
+
+end.
+

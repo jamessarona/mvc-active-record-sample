@@ -19,7 +19,12 @@ uses
   Controllers.PeopleServiceU in 'Controllers.PeopleServiceU.pas',
   Controllers.CustomersU in 'Controllers.CustomersU.pas',
   MunicipalLibrayWM in 'MunicipalLibrayWM.pas' {MunicipalLibraryWebModule: TWebModule},
-  Controllers.PersonU in 'Controllers.PersonU.pas';
+  Controllers.PersonU in 'Controllers.PersonU.pas',
+  Controllers.BooksU in 'Controllers.BooksU.pas',
+  Controllers.LendingsU in 'Controllers.LendingsU.pas',
+  Controllers.UsersU in 'Controllers.UsersU.pas',
+  Controllers.AuthorsU in 'Controllers.AuthorsU.pas',
+  Controllers.BaseU in 'Controllers.BaseU.pas';
 
 {$R *.res}
 

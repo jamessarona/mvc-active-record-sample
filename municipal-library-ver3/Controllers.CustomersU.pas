@@ -7,7 +7,7 @@ uses
   MVCFramework.Serializer.Commons, System.Generics.Collections;
 
 type
-  [MVCPath('/api')]
+  [MVCPath('/api/customers')]
   TCustomerController = class(TMVCController)
   end;
 
